@@ -10,15 +10,16 @@ public class Task6 {
         System.out.printf("Укажите год: ");
         int year = Integer.parseInt(iScanner.nextLine());
         iScanner.close();
-        leapYearOrNot(year);
+        boolean result = leapYearOrNot(year);
+        System.out.println(result);
     }
 
-    static void leapYearOrNot(int y) {
+    static boolean leapYearOrNot(int y) {
         System.out.println(y);
         if (!(y % 4 == 0) || ((y % 100 == 0) && !(y % 400 == 0))) {
-            System.out.println(y + " год не является високосным");
+            return false;
         } else {
-            System.out.printf(y + " год - високосный");
+            return true;
         }
     }
 }
